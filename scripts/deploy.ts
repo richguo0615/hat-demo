@@ -20,6 +20,11 @@ async function main() {
   await greeter.deployed();
 
   console.log("Greeter deployed to:", greeter.address);
+
+  const Token = await ethers.getContractFactory("Token");
+  const token = await Token.deploy();
+
+  await token.deployed();
 }
 
 // We recommend this pattern to be able to use async/await everywhere
